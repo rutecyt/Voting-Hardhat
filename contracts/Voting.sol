@@ -36,6 +36,8 @@ contract Voting {
         Proposal storage proposal = proposals.push();
         proposal.creator = msg.sender;
         proposal.question = _question;
+        proposal.voteStates[msg.sender] = VoteStates.Yes;
+        proposal.yesCount++;
     }
 
     function castVote(uint _proposalId, bool _supports) external {
