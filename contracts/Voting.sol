@@ -21,7 +21,7 @@ contract Voting {
     event ProposalCreated(uint);
     event VoteCast(uint, address indexed);
 
-    mapping(address => bool) members;
+    mapping(address => bool) public members;
 
     constructor(address[] memory _members) {
         for(uint i = 0; i < _members.length; i++) {
